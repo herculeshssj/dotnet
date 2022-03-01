@@ -13,6 +13,15 @@ DELETE /todoitems/{id}    	Delete an item    	        None	        None
 
 */
 
+/*
+    Docker
+
+    Build: docker build -t todoitemsapp .
+    Run: docker run -d -p 7242:80 --name todoitems todoitemsapp
+
+    Obs: o container Docker não utiliza HTTPS
+*/
+
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
