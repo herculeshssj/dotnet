@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // Database connection
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -14,9 +15,13 @@ builder.Services.AddDbContext<OportunidadeDb>(options =>
 
 var app = builder.Build();
 
-// Enable swagger
+// Enable Swagger
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseHttpsRedirection();
+
+app.Urls.Add("http://0.0.0.0:7242");
 
 /* GET - /concursos - Todos os concursos */
 app.MapGet("/concursos", async (OportunidadeDb db) =>  {
