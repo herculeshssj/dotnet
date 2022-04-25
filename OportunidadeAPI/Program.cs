@@ -19,10 +19,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
-
 app.Urls.Add("http://0.0.0.0:7242");
-app.Urls.Add("https://0.0.0.0:7243");
 
 /* GET - /concursos - Todos os concursos */
 app.MapGet("/concursos", async (OportunidadeDb db) =>  {
