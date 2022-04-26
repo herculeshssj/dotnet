@@ -15,11 +15,19 @@ builder.Services.AddDbContext<OportunidadeDb>(options =>
 
 var app = builder.Build();
 
+// Define os estados
+var estados = new[]{"BR","AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"};
+
 // Enable Swagger
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.Urls.Add("http://0.0.0.0:7242");
+
+/* GET - /estados  - Obtém uma lista dos estados */
+app.MapGet("/estados", async (OportunidadeDb db) =>  {
+    return await estados;
+});
 
 /* GET - /concursos - Todos os concursos */
 app.MapGet("/concursos", async (OportunidadeDb db) =>  {
