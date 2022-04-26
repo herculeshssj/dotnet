@@ -55,7 +55,7 @@ app.Urls.Add("http://0.0.0.0:7242");
 
 /* GET - /estados  - Obtém uma lista dos estados */
 app.MapGet("/estados", () =>  {
-    return estados;
+    return estados.ToList();
 });
 
 /* GET - /concursos - Todos os concursos */
