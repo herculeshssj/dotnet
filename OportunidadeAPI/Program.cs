@@ -16,7 +16,36 @@ builder.Services.AddDbContext<OportunidadeDb>(options =>
 var app = builder.Build();
 
 // Define os estados
-var estados = new[]{"BR","AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP","TO"};
+var estados = new Dictionary<string, string>{
+    {"BR","Nacional"},
+    {"AC","Acre"},
+    {"AL","Alagoas"},
+    {"AM","Amazonas"},
+    {"AP","Amapá"},
+    {"BA","Bahia"},
+    {"CE","Ceará"},
+    {"DF","Distrito Federal"},
+    {"ES","Espírito Santo"},
+    {"GO","Goiás"},
+    {"MA","Maranhão"},
+    {"MG","Minas Gerais"},
+    {"MS","Mato Grosso do Sul"},
+    {"MT","Mato Grosso"},
+    {"PA","Pará"},
+    {"PB","Paraíba"},
+    {"PE","Pernambuco"},
+    {"PI","Piauí"},
+    {"PR","Paraná"},
+    {"RJ","Rio de Janeiro"},
+    {"RN","Rio Grande do Norte"},
+    {"RO","Rondônia"},
+    {"RR","Roraima"},
+    {"RS","Rio Grande do Sul"},
+    {"SC","Santa Catarina"},
+    {"SE","Sergipe"},
+    {"SP","São Paulo"},
+    {"TO","Tocantis"}
+};
 
 // Enable Swagger
 app.UseSwagger();
@@ -25,8 +54,8 @@ app.UseSwaggerUI();
 app.Urls.Add("http://0.0.0.0:7242");
 
 /* GET - /estados  - Obtém uma lista dos estados */
-app.MapGet("/estados", async (OportunidadeDb db) =>  {
-    return await estados;
+app.MapGet("/estados", () =>  {
+    return estados;
 });
 
 /* GET - /concursos - Todos os concursos */
