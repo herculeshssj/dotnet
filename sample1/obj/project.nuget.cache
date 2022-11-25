@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JLLW266D4cqCZYQFGiLGzYRNj2+G0NsR89pTBMmXQibGeWdMYmnKe08iFKv5wKNMI53UnjaKJ91Sec1SaoLXMA==",
+  "dgSpecHash": "VHCJas79NR7HFoMWbSUgKg3NoMF4FsF1U2IfHcE/H4ZDAmRG5VlylsBm+C39+5gt/bl30h2ImdVJnUPP69QIrQ==",
   "success": true,
-  "projectFilePath": "C:\\Git\\dotnet\\sample1\\sample1.csproj",
+  "projectFilePath": "D:\\Git\\dotnet\\sample1\\sample1.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

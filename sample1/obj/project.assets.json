@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git\\dotnet\\sample1\\sample1.csproj",
+      "projectUniqueName": "D:\\Git\\dotnet\\sample1\\sample1.csproj",
       "projectName": "sample1",
-      "projectPath": "C:\\Git\\dotnet\\sample1\\sample1.csproj",
+      "projectPath": "D:\\Git\\dotnet\\sample1\\sample1.csproj",
       "packagesPath": "C:\\Users\\hercu\\.nuget\\packages\\",
-      "outputPath": "C:\\Git\\dotnet\\sample1\\obj\\",
+      "outputPath": "D:\\Git\\dotnet\\sample1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hercu\\AppData\\Roaming\\NuGet\\NuGet.Config",
