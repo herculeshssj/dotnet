@@ -10,20 +10,25 @@ Console.Write($"{Environment.NewLine}Press any key to exit...");
 Console.ReadKey(true);
 */
 
+// Exemplo de método
+void mensagem() {
+    Console.WriteLine("Hello World!");
+}
+
 List<int> pares = new List<int>();
 List<int> impares = new List<int>();
 
-pares.Add(2);
+pares.Add(12);
 pares.Add(4);
-pares.Add(6);
+pares.Add(16);
 pares.Add(8);
 pares.Add(10);
 
 impares.Add(1);
 impares.Add(3);
-impares.Add(5);
+impares.Add(15);
 impares.Add(7);
-impares.Add(9);
+impares.Add(19);
 
 //Console.WriteLine(pares.ToString());
 //Console.WriteLine(impares.ToString());
@@ -132,3 +137,5 @@ Console.WriteLine();
 9 pares 6 ímpares
 10 pares 5 ímpares
 */
+
+mensagem();
