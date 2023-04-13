@@ -1,6 +1,8 @@
 ﻿namespace KeyCounterAnalysis;
 
 using System.IO;
+using Microsoft.Data.Sqlite;
+
 class Program
 {
     static void Main(string[] args)
@@ -42,5 +44,45 @@ class Program
 
         }
 
+        Console.WriteLine("Testando conexão com a base SQLite...");
+
+        using (var connection = new SqliteConnection("Data Source=keycounter.db"))
+        {
+            connection.Open();
+
+            var command = connection.CreateCommand();
+            command.CommandText =
+            @"
+                select * from track t ;
+            ";
+            //command.Parameters.AddWithValue("$id", id);
+
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    var name = reader.GetString(0);
+
+                    Console.WriteLine($"Hello, {name}!");
+                }
+            }
+        }
+
     }
 }
+
+/* Gerar UUID 
+using System;
+using System.Diagnostics;
+
+namespace SampleApplication {
+    class Program {
+        static void Main(string[] args) {
+            Guid myuuid = Guid.NewGuid();
+            string myuuidAsString = myuuid.ToString();
+
+            Debug.WriteLine("Your UUID is: " + myuuidAsString);
+        }
+    }
+}
+*/
