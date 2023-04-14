@@ -22,29 +22,17 @@ public class KeyCounter {
     
 
 */
-    public void hello() {
-        Console.WriteLine("Hello World");
-    }
 
     private Boolean dayExistsOnDatabase(string currentDate, SqliteConnection connection) {
-        return false;
-        /*
         var command = connection.CreateCommand();
-            command.CommandText =
-            @"
-                select * from track t ;
-            ";
-            //command.Parameters.AddWithValue("$id", id);
+        command.CommandText = @"
+            select count(*) from track where day = $day;
+        ";
+        command.Parameters.AddWithValue("$day", currentDate);
 
-            using (var reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    var name = reader.GetString(0);
+        var contagem = (long)command.ExecuteScalar();
 
-                    Console.WriteLine($"Hello, {name}!");
-                }
-            }*/
+        return contagem == 0 ? false : true ;
     }
 
     public void processFiles() {
@@ -61,9 +49,11 @@ public class KeyCounter {
                         string[] filename = keycounterFile.Name.Split(".");
                         string currentDate = "20" + filename[0]; // FIXME não está no formato yyyy-mm-dd
 
-                        if (this.dayExistsOnDatabase(currentDate, connection))
+                        if (this.dayExistsOnDatabase(currentDate, connection)) {
+                            Console.WriteLine("Day already loaded: " + currentDate);
                             continue;
-
+                        }
+                            
                         int hour = 0;
                         int minute = 0;
                         StreamReader reader = new StreamReader(keycounterFile.FullName);
