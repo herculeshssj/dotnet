@@ -7,6 +7,18 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        KeyCounter keyCounter = new KeyCounter();
+        Console.WriteLine("Loading data to database...");
+        keyCounter.processFiles();
+        Console.WriteLine("Load completed!...");
+
+
+
+        //keyCounter.hello();
+        /*
+
+
         Console.WriteLine("Listando os arquivos do diretório...");
         Console.WriteLine("");
 
@@ -66,7 +78,31 @@ class Program
                     Console.WriteLine($"Hello, {name}!");
                 }
             }
+
+            // UUID
+            Guid myuuid = Guid.NewGuid();
+            string myuuidAsString = myuuid.ToString();
+
+
+            // command WriteLine
+            var commandWrite = connection.CreateCommand();
+            commandWrite.CommandText = @"
+                INSERT INTO track
+                (id, day, hour, minute, keys, mouse)
+                VALUES($id, $day, $hour, $minute, $keys, $mouse);
+            ";
+            commandWrite.Parameters.AddWithValue("$id", myuuidAsString);
+            commandWrite.Parameters.AddWithValue("$day", "2023-01-15");
+            commandWrite.Parameters.AddWithValue("$hour", 10);
+            commandWrite.Parameters.AddWithValue("$minute", 15);
+            commandWrite.Parameters.AddWithValue("$keys", 384);
+            commandWrite.Parameters.AddWithValue("$mouse", 3928);
+
+            commandWrite.ExecuteNonQuery();
+
+            connection.Close();
         }
+        */
 
     }
 }
