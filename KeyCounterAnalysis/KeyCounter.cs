@@ -35,6 +35,22 @@ public class KeyCounter {
         return contagem == 0 ? false : true ;
     }
 
+    private void deleteCurrentDay(SqliteConnection connection) {
+        var command = connection.CreateCommand();
+
+        DateTime today = DateTime.Now;
+        DateTime yesterday = DateTime.Now.AddDays(-1);
+
+        command.CommandText = @"
+            delete from track where day = $today or day = $yesterday;
+        ";
+        command.Parameters.AddWithValue("$today", today.ToString("yyyy-MM-dd"));
+        command.Parameters.AddWithValue("$yesterday", yesterday.ToString("yyyy-MM-dd"));
+
+        command.ExecuteNonQuery();
+        
+    }
+
     public void processFiles() {
         using (var connection = new SqliteConnection("Data Source=keycounter.db")) {
             
@@ -42,6 +58,9 @@ public class KeyCounter {
 
             DirectoryInfo keycounterDirectory = new DirectoryInfo(@"keycounter");
             FileInfo[] keycounterFileList = keycounterDirectory.GetFiles();
+
+            // Delete current day and yesterday
+            this.deleteCurrentDay(connection);
 
             foreach(FileInfo keycounterFile in keycounterFileList) {
                 if (keycounterFile.Extension == ".day") {
@@ -53,7 +72,7 @@ public class KeyCounter {
                             Console.WriteLine("Day already loaded: " + currentDate);
                             continue;
                         }
-                            
+                
                         int hour = 0;
                         int minute = 0;
                         StreamReader reader = new StreamReader(keycounterFile.FullName);
