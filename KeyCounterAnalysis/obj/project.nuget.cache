@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "cnCPhudk8Xm4AS9dOReQGZ2Ahr1Y8ERAXHnQMavQftwf2zDKlajXB2fNv4YR3RUkdgkQrnJ6QXOfPBJSzl1n/g==",
+  "dgSpecHash": "3FjfFjaMlcnPQAdnDqxklpcZRWYBi8A02DhWHeJhSoigd50XzcOS8sNTJ/yCEXyxZt4sFTZnz1dhsHzc4WeTYg==",
   "success": true,
   "projectFilePath": "D:\\Git\\dotnet\\KeyCounterAnalysis\\KeyCounterAnalysis.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hercu\\.nuget\\packages\\microsoft.data.sqlite\\7.0.5\\microsoft.data.sqlite.7.0.5.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.4\\sqlitepclraw.bundle_e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\sqlitepclraw.core\\2.1.4\\sqlitepclraw.core.2.1.4.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.4\\sqlitepclraw.lib.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.4\\sqlitepclraw.provider.e_sqlite3.2.1.4.nupkg.sha512",
+    "C:\\Users\\hercu\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
   "logs": []
 }
