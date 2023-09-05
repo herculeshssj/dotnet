@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git\\doutoramento\\Loteria\\ParImpar\\ParImpar.csproj": {}
+    "D:\\Git\\dotnet\\Loteria\\ParImpar\\ParImpar.csproj": {}
   },
   "projects": {
-    "D:\\Git\\doutoramento\\Loteria\\ParImpar\\ParImpar.csproj": {
+    "D:\\Git\\dotnet\\Loteria\\ParImpar\\ParImpar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git\\doutoramento\\Loteria\\ParImpar\\ParImpar.csproj",
+        "projectUniqueName": "D:\\Git\\dotnet\\Loteria\\ParImpar\\ParImpar.csproj",
         "projectName": "ParImpar",
-        "projectPath": "D:\\Git\\doutoramento\\Loteria\\ParImpar\\ParImpar.csproj",
+        "projectPath": "D:\\Git\\dotnet\\Loteria\\ParImpar\\ParImpar.csproj",
         "packagesPath": "C:\\Users\\hercu\\.nuget\\packages\\",
-        "outputPath": "D:\\Git\\doutoramento\\Loteria\\ParImpar\\obj\\",
+        "outputPath": "D:\\Git\\dotnet\\Loteria\\ParImpar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hercu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
