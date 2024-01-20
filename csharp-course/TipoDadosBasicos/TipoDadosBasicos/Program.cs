@@ -46,3 +46,27 @@ int n10 = int.MinValue;
 int n20 = int.MaxValue;
 Console.WriteLine("Mínimo: " + n10);
 Console.WriteLine("Máximo: " + n20);
+
+// Conversão implícita e casting
+Console.WriteLine("Conversão implícita e casting");
+
+float y = 4.5f;
+double z = y;
+Console.WriteLine(z);
+
+float w;
+w = (float)z;
+Console.WriteLine(z);
+
+// Caso a analisar em outras linguagens: o compilador considerou a operação abaixo como uma divisão
+// inteira.
+int m = 5;
+int n = 2;
+double resultado = m / n;
+Console.WriteLine(resultado);
+
+// No Java, esta operação retorna um valor inteiro. Como o valor é armazenado em uma variável de
+// ponto flutuante, o valor mostrado tem casa decimal.
+
+// É necessário fazer o cast explícito para a operação retornar um valor de ponto flutuante. O mesmo
+// se aplica ao Java.
